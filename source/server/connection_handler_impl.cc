@@ -150,7 +150,7 @@ ConnectionHandlerImpl::ActiveConnection::ActiveConnection(ActiveListener& listen
       conn_length_(listener_.stats_.downstream_cx_length_ms_.allocateSpan()) {
   // We just universally set no delay on connections. Theoretically we might at some point want
   // to make this configurable.
-  connection_->noDelay(true);
+  //connection_->noDelay(true);
   connection_->addConnectionCallbacks(*this);
   listener_.stats_.downstream_cx_total_.inc();
   listener_.stats_.downstream_cx_active_.inc();
