@@ -213,7 +213,7 @@ Network::FilterStatus TcpProxy::initializeUpstreamConnection() {
        read_callbacks_->upstreamHost()->cluster().stats().upstream_cx_tx_bytes_total_,
        read_callbacks_->upstreamHost()->cluster().stats().upstream_cx_tx_bytes_buffered_});
   upstream_connection_->connect();
-  upstream_connection_->noDelay(true);
+//  upstream_connection_->noDelay(true);
 
   connect_timeout_timer_ = read_callbacks_->connection().dispatcher().createTimer(
       [this]() -> void { onConnectTimeout(); });
